@@ -6,13 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Access elements on the upper case page
  */
 public class UpperCasePage {
 
-    private static final String UPPER_CASE_PAGE = "/upperCase";
+    private static final String UPPER_CASE_PAGE = "/uppercase-web";
     private static String url = null;
 
     private WebDriver webDriver = null;
@@ -89,6 +91,9 @@ public class UpperCasePage {
      * @return
      */
     public String getOutputString() {
+        // Give it a second to display the value
+        WebDriverWait wait = new WebDriverWait(webDriver, 1);
+        wait.until(ExpectedConditions.visibilityOf(outputString));
         return outputString.getText();
     }
 
