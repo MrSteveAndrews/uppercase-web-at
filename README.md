@@ -1,9 +1,13 @@
 # uppercase-web-at
 Tests the uppercase web ui
 
-To build and run tests, execute:
+To run tests:
 
-     mvn test -Duppercase.web.url=http://localhost:8080
+     mvn test -Duoppercase.web.url=<uppercase.web.url>
 
-* uppercase.web.url should be the base URL of the upper case web app instance to test
-* Open uppercase-web-at/target/site/cucumber-pretty/index.html to view the test results
+Where <uppercase.web.host> = the host URL of the service endpoint.  Examples:
+
+* If the web app URL is http://localhost:8080/uppercase-web, <uppercase.web.url> = http://localhost:8080
+* If the web app URL is http://test.strings.blue-agility.com/uppercase-web, <uppercase.web.url> = http://test.strings.blue-agility.com
+
+Open uppercase-web-at/target/site/cucumber-pretty/index.html to view the test results
